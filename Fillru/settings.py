@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from os import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-=kx-k#%1^m6#6e4i(#r3b+hn$*q$eq%7$g3&^ru398huqmkc(b
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -69,7 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Fillru.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -77,12 +75,11 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "OPTIONS": {
-            "service": "my_service",
-            "passfile": ".my_pgpass",
+            "service": "Fillru",    #Gotta be at home directory, check https://www.postgresql.org/docs/current/libpq-pgservice.html
+            "passfile": ".pgpass.conf", #Gotta be at project's directory, check https://www.postgresql.org/docs/current/libpq-pgpass.html
         },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -102,7 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -113,7 +109,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

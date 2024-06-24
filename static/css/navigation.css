@@ -80,3 +80,7 @@ a.\.header-nav-links {
     display: flex;
     align-items: center;
 }
+
+a.logo-a {
+    height: 100%;
+}

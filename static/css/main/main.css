@@ -2,15 +2,87 @@ a#header-nav-links-main {
     color: rgb(200, 200, 200);
 }
 
-.main-article {
-    background: url(https://b1901058.smushcdn.com/1901058/wp-content/uploads/2022/01/AdobeStock_308981261.jpeg?lossy=0&strip=1&webp=1), black;
-    background-size: cover;
+.top-article {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 1200px;
 }
 
 .sub-head-wrap {
     margin-top: 202px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+}
+
+.sub-head-wrap-introduction {
+    font-size: 17px;
+    line-height: initial;
+    width: 100%;
+    text-shadow: 1px 1px 1px black;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ebebeb;
+    font-weight: 300;
+    user-select: none;
+}
+
+span.bold.shad {
+    font-weight: 600;
+    color: white;
+}
+
+a.orange-bold {
+    text-decoration: none;
+    color: rgb(255, 204, 0);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.comparison {
+    display: grid;
+    width: 100%;
+    justify-content: space-between;
+    height: 290px;
+}
+
+section.comparison-side {
+    grid-row: 1;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.8);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.comparison-new-header {
+    display: flex;
+}
+
+.bold.shad {
+    margin-left: 4px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+header.comparison-item-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 204, 0, 0.82);
+    font-size: 18px;
+    height: 30%;
+    justify-content: center;
+}
+
+.comparison-item {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 100%;
 }

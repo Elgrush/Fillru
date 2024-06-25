@@ -1,18 +1,22 @@
 <nav class="header-navbar navbar">
     <div class="header-navbar container">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/navigation/navigation.css' %}">
+        <script src="{% static 'js/navigation/handlersCollection.js' %}" type="module"></script>
+        <script src="{% static 'js/navigation/navigation.js' %}" type="module"></script>
         <a class="logo-a" href="https://fillru.ru/" rel="home">
                 <img class="png-logo" src="https://fillru.ru/wp-content/uploads/2023/04/logo.svg"
                      alt="Fillru — FBS, FBO Фулфилмент в Москве: Ozon | WildBerries | Я.Маркет" data-rjs="2">
         </a>
         <div class="header-navbar right container">
-            <a class=".header-nav-links" href="https://fillru.ru/" aria-current="page">Главная</a>
-            <a class=".header-nav-links" href="https://fillru.ru/kontaktnaya-informacziya/">Контактная информация</a>
-            <a class=".header-nav-links" data-scroll="" href="#section-calc">&nbsp;Калькулятор услуг&nbsp;
+            <a class=".header-nav-links" id="header-nav-links-main" href="https://fillru.ru/">Главная</a>
+            <a class=".header-nav-links" id="header-nav-links-contact_info" href="https://fillru.ru/kontaktnaya-informacziya/">Контактная информация</a>
+            <a class=".header-nav-links" id="header-nav-links-calculator" data-scroll="" href="#section-calc">&nbsp;Калькулятор услуг&nbsp;
                 <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512"><title>ionicons-v5-d</title><path d="M416,48a16,16,0,0,0-16-16H112A16,16,0,0,0,96,48V464a16,16,0,0,0,16,16H400a16,16,0,0,0,16-16ZM192,432H144V384h48Zm0-80H144V304h48Zm0-80H144V224h48Zm88,160H232V384h48Zm0-80H232V304h48Zm0-80H232V224h48Zm88,160H320V304h48Zm0-160H320V224h48Zm0-96H144V80H368Z" fill="rgb(171, 171, 171)"></path></svg>
             </a>
-            <a class=".header-nav-links" href="https://www.demo.fillru.ru/" style="color:#ffcc00d1;" target="blank">Демоверсия </a>
-            <a class=".header-nav-links" href="https://www.app.fillru.ru/" target="blank">Личный Кабинет
-                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 500"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" fill="rgb(171, 171, 171)"/></svg>
+            <a class=".header-nav-links" id="header-nav-links-demo_version" href="https://www.demo.fillru.ru/" style="color:#ffcc00d1;" target="blank">Демоверсия </a>
+            <a class=".header-nav-links" id="header-nav-links-personal_cabinet" href="https://www.app.fillru.ru/" target="blank">Личный Кабинет
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" fill="rgb(171, 171, 171)"/></svg>
             </a>
         </div>
     </div>

@@ -1,3 +1,7 @@
+a#header-nav-links-main {
+    color: rgb(200, 200, 200);
+}
+
 .main-article {
     background: url(https://b1901058.smushcdn.com/1901058/wp-content/uploads/2022/01/AdobeStock_308981261.jpeg?lossy=0&strip=1&webp=1), black;
     background-size: cover;
@@ -5,4 +9,8 @@
     left: 0;
     top: 0;
     width: 100%;
+}
+
+.sub-head-wrap {
+    margin-top: 202px;
 }

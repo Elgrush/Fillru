@@ -22,7 +22,6 @@ nav.header-navbar.navbar {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,16 +37,25 @@ nav.header-navbar.navbar {
     .header-navbar.container {
         width: 750px;
     }
+    .header-navbar.subtop-container {
+        width: 750px;
+    }
 }
 
 @media (min-width: 992px){
     .header-navbar.container {
         width: 970px;
     }
+    .header-navbar.subtop-container {
+        width: 970px;
+    }
 }
 
 @media (min-width: 1200px){
     .header-navbar.container {
+        width: 1170px;
+    }
+    .header-navbar.subtop-container {
         width: 1170px;
     }
 }
@@ -83,4 +91,50 @@ a.\.header-nav-links {
 
 a.logo-a {
     height: 100%;
+}
+
+.header-navbar.subtop {
+    position: fixed;
+    animation-duration: 0.75s;
+    transition-duration: 0.75s;
+    top: 100px;
+    background-color: rgba(247, 247, 247, 0.9);
+    border-bottom-color: rgb(135, 135, 135);
+    font-size: 16px;
+    opacity: 1;
+    width: 100%;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+}
+
+.header-navbar.subtop-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+p#nav-address {
+    color: #333;
+    padding-right: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+}
+
+a#nav-phone {
+    font-weight: 600;
+    padding-right: 12px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+}
+
+.header-navbar-refcontainer {
+    display: flex;
+}
+
+svg.header-navbar-refcontainer-icon {
+    margin-left: 10px;
+    margin-right: 10px;
 }

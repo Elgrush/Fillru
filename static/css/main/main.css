@@ -45,20 +45,20 @@ a.orange-bold {
 }
 
 .comparison {
-    display: grid;
     width: 100%;
+    display: flex;
+    font-size: 14px;
     justify-content: space-between;
-    height: 290px;
 }
 
 section.comparison-side {
     grid-row: 1;
-    width: 100%;
     background-color: rgba(26, 26, 26, 0.8);
-    font-size: 16px;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    clip-path: polygon(15px 0px, 100% 0px, 100% 100%, calc(100% - 15px) 100%, 0px 100%, 0px 15px);
+    width: 47.5%;
 }
 
 .comparison-new-header {
@@ -77,12 +77,39 @@ header.comparison-item-head {
     align-items: center;
     background-color: rgba(255, 204, 0, 0.82);
     font-size: 18px;
-    height: 30%;
+    height: 100px;
     justify-content: center;
+    font-size: 20px;
 }
 
 .comparison-item {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
-    height: 100%;
+    height: 80%;
+    line-height: 22px;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px;
+    color: rgba(255, 255, 255);
+    font-weight: 500;
+    inset CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    inset CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    inset 0 -1px CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    inset 0 -1px CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    inset 0 -1px 0 CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    inset 0 -1px 0 CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    display: flex;
+    flex-direction: column;
+}
+
+.comparison-item.--foot {
+    box-shadow: inset 0 1px 0 0;
+    margin-left: 0;
+    height: 40px;
+    margin-top: 0;
+    align-items: center;
+    padding-top: 10px;
+}
+
+dt.comparison-item-price {
+    font-size: 24px;
+    color: rgb(255, 204, 0);
 }

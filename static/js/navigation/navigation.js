@@ -1,6 +1,6 @@
 import { illuminateObject } from "./handlersCollection.js"
 
-//Manages color swaps
+//Manages top bar color swaps
 for(let element of document.getElementsByClassName(".header-nav-links"))
 {
     if(element.id != "header-nav-links-demo_version")

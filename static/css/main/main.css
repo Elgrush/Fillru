@@ -89,12 +89,6 @@ header.comparison-item-head {
     text-shadow: rgba(0, 0, 0, 0.6) 0px 2px 2px;
     color: rgba(255, 255, 255);
     font-weight: 600;
-    inset CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
-    inset CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
-    inset 0 -1px CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
-    inset 0 -1px CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
-    inset 0 -1px 0 CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
-    inset 0 -1px 0 CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
     display: flex;
     flex-direction: column;
 }
@@ -119,14 +113,14 @@ body {
 }
 
 .BlackBoldMiddleBox {
-    margin-top: 80px;
+    margin-top: 40px;
     font-family: "Roboto Condensed", sans-serif;
     clip-path: polygon(15px 0px, 100% 0px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0px 100%, 0px 15px);
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     padding: 4px 16px 4px 16px;
     font-size: 30px;
-    text-shadow: 1px 1px black;
+    text-shadow: rgb(0, 0, 0) 1px 1px 0px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -135,4 +129,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    user-select: none;
+    max-width: 1200px;
+    margin: auto;
+    font-family: Roboto, sans-serif;
+    margin: auto;
 }

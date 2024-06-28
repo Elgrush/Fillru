@@ -23,7 +23,7 @@ for(let element of document.getElementsByClassName(".header-nav-links"))
     nav_phone.addEventListener("mouseout", (event) => {
         nav_phone.removeAttribute("style");
     })
-}
+};
 
 //Underlines icons
 for(let element of document.getElementsByClassName("header-navbar-refcontainer-icon"))
@@ -34,4 +34,23 @@ for(let element of document.getElementsByClassName("header-navbar-refcontainer-i
     element.addEventListener("mouseout", (event) => {
         element.removeAttribute("style");
     })
+};
+
+//Handles scrolldown
+const elementsToFadeInUpOnScroll = document.querySelectorAll(".fade-in-up-on-scroll");
+let previous_height = window.scrollY;
+if (elementsToFadeInUpOnScroll) {
+window.addEventListener("scroll", function(event) {
+    elementsToFadeInUpOnScroll.forEach(function(element) {
+    if (window.scrollY > previous_height) {
+        element.classList.remove("fade-out-down");
+        element.classList.add("fade-in-up");
+        previous_height = window.scrollY;
+    } else {
+        element.classList.remove("fade-in-up");
+        element.classList.add("fade-out-down");
+        previous_height = window.scrollY;
+    }
+    });
+});
 };

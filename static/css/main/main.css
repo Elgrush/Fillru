@@ -3,7 +3,6 @@ a#header-nav-links-main {
 }
 
 .top-article {
-    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -57,7 +56,7 @@ section.comparison-side {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    clip-path: polygon(15px 0px, 100% 0px, 100% 100%, calc(100% - 15px) 100%, 0px 100%, 0px 15px);
+    clip-path: polygon(15px 0px, 100% 0px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0px 100%, 0px 15px);
     width: 47.5%;
 }
 
@@ -112,4 +111,28 @@ header.comparison-item-head {
 dt.comparison-item-price {
     font-size: 24px;
     color: rgb(255, 204, 0);
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+.BlackBoldMiddleBox {
+    margin-top: 80px;
+    font-family: "Roboto Condensed", sans-serif;
+    clip-path: polygon(15px 0px, 100% 0px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0px 100%, 0px 15px);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 4px 16px 4px 16px;
+    font-size: 30px;
+    text-shadow: 1px 1px black;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -59,10 +59,12 @@ a.\.header-nav-links {
     text-decoration: none;
     display: flex;
     align-items: center;
+    user-select: none;
 }
 
 a.logo-a {
     height: 100%;
+    user-select: none;
 }
 
 .header-navbar.subtop {
@@ -111,4 +113,35 @@ a#nav-phone {
 svg.header-navbar-refcontainer-icon {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* For top-bar fading */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 0;
+    display: none;
+  }
+}
+.fade-in-up {
+  animation: 0.75s both fadeInUp;
+}
+
+@keyframes fadeOutDown {
+  from {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.fade-out-down {
+  animation: 0.75s both fadeOutDown;
 }

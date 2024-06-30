@@ -1,0 +1,142 @@
+.calc-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    width: 1200px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.header-upper-case {
+    padding: 4px 16px;
+    z-index: 0;
+    background: #fc0;
+    color: #000;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    text-shadow: none;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.nav-tabs {
+    font-weight: 700;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.calc-nav {
+    color: #fc0;
+    background: #000;
+    padding: 4px 16px;
+    cursor: default;
+    text-shadow: none;
+    border: none;
+    text-decoration: none;
+}
+
+.calc-nav-active {
+    background-color: #fc0;
+    color: #000;
+}
+
+div#nav-tabs-FBO {
+    clip-path: polygon(15px 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 15px);
+}
+
+div#nav-tabs-FBS {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+.calc-orange {
+    color: #fc0;
+    padding-right: 5px;
+}
+
+.calc-calc {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.calc-row {
+    display: flex;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 120px;
+    justify-items: end;
+    margin-top: 20px;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(133, 133, 133);
+}
+
+.calc-offer {
+    justify-content: center;
+    margin-top: 30px;
+    color: rgb(51, 51, 51);
+    font-size: 16px;
+}
+
+.calc-select {
+    border: solid 2px #ffbb00;
+    border-radius: 5px;
+    padding: 0 8px 0 8px;
+    width: 100%;
+    height: 70%;
+    appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px inset;
+}
+
+.calc-selector-div {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.calc-row.calc-select {
+    padding: 2px 2px 2px 0;
+    width: calc(90% - 4px);
+    align-items: center;
+    background-color: #ffbb00;
+}
+
+.calc-total-pcs {
+    height: 90%;
+    flex-grow: 1;
+    appearance: none;
+}
+
+.calc-row.calc-measuring {
+    background-color: rgb(255, 204, 0);
+    height: 100%;
+    align-items: center;
+    color: #000;
+    padding-right: 10px;
+}
+
+output.calc-numbox {
+    min-width: 40px;
+    text-align: center;
+}
+
+.calc-result.calc-row {
+    justify-self: right;
+    width: 90%;
+}
+
+.calc-cost-font {
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.red {
+    color: red;
+}

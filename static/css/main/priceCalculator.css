@@ -72,7 +72,7 @@ div#nav-tabs-FBS {
     justify-items: end;
     margin-top: 20px;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(133, 133, 133);
 }
 
@@ -110,7 +110,6 @@ div#nav-tabs-FBS {
 .calc-total-pcs {
     height: 90%;
     flex-grow: 1;
-    appearance: none;
 }
 
 .calc-row.calc-measuring {

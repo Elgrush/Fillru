@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/main/priceCalculator.css' %}">
+<script src="{% static 'js/main/priceCalculator.js' %}" type="module"></script>
 <section id="section-calc" class="calc-section"  style="background: url({{ MEDIA_URL }}/media/images/main/darkBackground.jpg), black; background-size: cover;">
     <div class="calc-div">
         <div class="header-upper-case">Расчет стоимости услуг</div>
@@ -16,7 +17,7 @@
           <div class="calc-grid">
             Габариты позиции (см³) ~
           <div class="calc-selector-div">
-              <select class="calc-select">
+              <select class="calc-select" id="calc-select-fbo">
                 <option value="38" selected="selected">10 x 10 x 10 см (не более 500 г.)</option>
                 <option value="70">20 x 20 x 20 см (не более 1000 гр)</option>
                 <option value="110">30 x 30 x 30 см (не более 3000 гр)</option>
@@ -24,9 +25,9 @@
           </div>
         <div class="calc-option">Количество позиций:</div>
           <div class="calc-row calc-select">
-          <input class="calc-total-pcs" type="number" id="total-pcs-calc" name="total_pcs" min="1" max="1000000" step="1" value="0" maxlength="7" placeholder="Укажите количество позиций ...">
+          <input class="calc-total-pcs" type="number" id="total-pcs-calc-fbo" name="total_pcs" min="1" max="1000000" step="1" maxlength="7" placeholder="Укажите количество позиций ...">
               <div class="calc-row calc-measuring">
-                <output class="calc-numbox"> 0</output>
+                <output class="calc-numbox" id="calc-numout-fbo"> 0</output>
                 <div>шт</div>
               </div>
         </div>
@@ -40,5 +41,40 @@
                     <div class="red">*</div> Не является публичной офертой.
             </div>
       </div>
+
+
+         <div id="fbs_calc" class="calc-calc" style="display: none;">
+          <div class="calc-row">
+              <div class="calc-orange">FBO</div> - Обработка товара в соответствии с требованиями маркетплейса, и его доставка до складов оператора.
+          </div>
+          <div class="calc-grid">
+            Габариты позиции (см³) ~
+          <div class="calc-selector-div">
+              <select class="calc-select" id="calc-select-fbs">
+                  <option value="38" selected="selected">10 x 10 x 10 см (не более 500 г.)</option>
+                  <option value="70">20 x 20 x 20 см (не более 1000 гр)</option>
+                  <option value="110">30 x 30 x 30 см (не более 3000 гр)</option>
+                  <option value="800">80 x 80 x 80 см (не более 40 кг)</option>
+              </select>
+          </div>
+        <div class="calc-option">Количество позиций:</div>
+          <div class="calc-row calc-select">
+          <input class="calc-total-pcs" type="number" id="total-pcs-calc-fbs" name="total_pcs" min="1" max="1000000" step="1" maxlength="7" placeholder="Укажите количество позиций ...">
+              <div class="calc-row calc-measuring">
+                <output class="calc-numbox" id="calc-numout-fbs"> 0</output>
+                <div>шт</div>
+              </div>
+        </div>
+            <div class="calc-result-title calc-cost-font" >Общая стоимость:</div>
+            <div class="calc-result calc-row calc-cost-font">
+                <div id="calc-price-total-FBS" class="calc-total">0</div>
+                ₽
+            </div>
+              </div>
+            <div class="calc-offer calc-row">
+                    <div class="red">*</div> Не является публичной офертой.
+            </div>
+      </div>
+
     </div>
 </section>

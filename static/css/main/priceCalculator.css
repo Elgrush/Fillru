@@ -59,6 +59,8 @@ div#nav-tabs-FBS {
 .calc-calc {
     font-size: 18px;
     color: #ddd;
+    max-width: 926px;
+    text-align: center;
 }
 
 .calc-row {
@@ -138,4 +140,8 @@ output.calc-numbox {
 
 .red {
     color: red;
+}
+
+.calc-row-fbs {
+    max-width: 875px;
 }

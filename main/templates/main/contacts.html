@@ -1,5 +1,8 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/main/contacts.css' %}">
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script src="{% static 'js/main/contact.js' %}" type="module"></script>
 <section class="contact-section">
     <div class="contact-center-title">
         Предлагаем Вам ознакомится с демоверсией нашего личного кабинета.
@@ -174,7 +177,7 @@
                     <div id="messageResult"></div>
                     <form action="javascript:void(0);" class="contact-form" name="contact_form">
                         <input class="contact-form-field" id="contact-form-name" type="text" name="contact_name" placeholder="Имя *">
-                        <input class="contact-form-field" id="contact-form-phone" type="text" name="contact_phone" placeholder="Телефон *" maxlength="30">
+                        <input class="contact-form-field" id="contact-form-phone" type="text" name="contact_phone" placeholder="Телефон *">
                         <select class="contact-form-field" id="contact-form-subject" name="contact_subject">
                             <option value="Фулфилмент / Fulfillment">Фулфилмент / Fulfillment</option>
                             <option value="Сотрудничество">Сотрудничество</option>

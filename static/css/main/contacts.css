@@ -114,13 +114,14 @@ a.contact-icon-address {
 
 .contact-map
 {
-    width: 60%;
+    width: 64%;
 }
 
 .contact-form-container {
-    width: 39%;
+    width: 35%;
     display: flex;
     flex-direction: column;
+    font-family "Roboto Condensed", font-family: sans-serif;
 }
 
 .contact-form {
@@ -132,6 +133,12 @@ a.contact-icon-address {
 
 .contact-form-field {
     height: 40px;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-width: 2px;
+    "Roboto Condensed", font-family: sans-serif;
 }
 
 div#yamap1 {
@@ -140,4 +147,9 @@ div#yamap1 {
 
 textarea#contact-form-mess {
     height: 130px;
+}
+
+input#contact-form-button {
+    background-color: #000;
+    color: #fff;
 }

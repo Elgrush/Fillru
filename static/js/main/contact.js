@@ -1,5 +1,2 @@
-//Due to some unexpected patterns in yandex maps, hides some crutches
-for(let element of document.getElementsByClassName("vanish"))
-{
-    element.style["display"] = "none";
-}
+//Phone input
+$("#contact-form-phone").mask("+7(999)999-9999");

@@ -78,6 +78,7 @@ svg#calc-turned-phone {
 a.contact-icon-link {
     text-decoration: none;
     color: #000;
+    user-select: text;
 }
 
 a.contact-icon-phone {
@@ -97,4 +98,46 @@ a.contact-icon-address {
 {
     width: 46px;
     display: flex;
+}
+
+.contact-icon-text {
+    user-select: text;
+}
+
+.contact-map-form-div {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    justify-content: space-between;
+}
+
+.contact-map
+{
+    width: 60%;
+}
+
+.contact-form-container {
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.contact-form-field {
+    height: 40px;
+}
+
+div#yamap1 {
+    height: 100%;
+}
+
+textarea#contact-form-mess {
+    height: 130px;
 }

@@ -86,4 +86,105 @@
         </div>
     </div>
 
+    <div class="contact-map-form-div">
+        <div class="contact-map">
+            <script type="text/javascript">
+			if (typeof(YaMapsWP) === "undefined") {
+				var YaMapsWP = {}, YMlisteners = {};
+				var YaMapsScript = document.createElement("script");
+				var YaMapsScriptCounter = [];
+			}
+			var myMap1;
+		</script>
+			<script type="text/javascript">
+						document.addEventListener("DOMContentLoaded", function() {
+						   if (document.getElementById("YandexMapAPI-js") == null ) {
+					   			YaMapsScriptCounter.push(function() {ymaps.ready(init)});
+						   		if (document.getElementById("YandexMapAPI-alt-js") == null ) {
+						   			function AltApiLoad(src){
+
+									  YaMapsScript.id = "YandexMapAPI-alt-js";
+									  YaMapsScript.src = src;
+									  YaMapsScript.async = false;
+									  document.head.appendChild(YaMapsScript);
+
+									}
+
+									AltApiLoad("https://api-maps.yandex.ru/2.1/?lang=ru_RU&ver=2.1");
+
+									window.onload = function() {
+										YaMapsScriptCounter.forEach(function(entryFunc) {
+										    entryFunc();
+										});
+									}
+						   		}
+
+
+
+						   }
+						   else {
+						   		ymaps.ready(init);
+						   }
+
+
+							YMlisteners.myMap1 = {};
+							YaMapsWP.myMap1 = {center: "55.8565,37.4852", zoom: "13", type: "yandex#map", controls: "typeSelector;zoomControl;routeButtonControl;rulerControl;fullscreenControl", places: {}};
+
+	                 		var yamapsonclick = function (url) {
+								location.href=url;
+	                 		}
+
+	                        function init () {
+	                            myMap1 = new ymaps.Map("yamap1", {
+	                                    center: [55.8565,37.4852],
+	                                    zoom: 13,
+	                                    type: "yandex#map",
+	                                    controls: ["typeSelector", "zoomControl", "routeButtonControl", "rulerControl", "fullscreenControl"] ,
+
+	                                },
+	                                {
+	                                	suppressMapOpenBlock: false
+	                                });
+
+
+		YaMapsWP.myMap1.places.placemark1 = {icon: "islands#dotIcon", name: "Fillru | Fulfillment | Фестивальная улица, дом 4", color: "#000", coord: "55.8565,37.4852", url: "",};
+		myMap1placemark1 = new ymaps.Placemark([55.8565,37.4852], {
+                                hintContent: "Fillru | Fulfillment | Фестивальная улица, дом 4",
+                                iconContent: "",
+
+
+
+                            }, {
+                            	preset: "islands#dotIcon",
+                            	iconColor: "#000",
+                            });
+		myMap1.geoObjects.add(myMap1placemark1);myMap1.behaviors.disable('scrollZoom');
+
+	                        }
+                        }, false);
+                    </script>
+
+            <div id="yamap1">
+
+            </div>
+
+        </div>
+
+        <div class="contact-form-container">
+                    <div id="messageResult"></div>
+                    <form action="javascript:void(0);" class="contact-form" name="contact_form">
+                        <input class="contact-form-field" id="contact-form-name" type="text" name="contact_name" placeholder="Имя *">
+                        <input class="contact-form-field" id="contact-form-phone" type="text" name="contact_phone" placeholder="Телефон *" maxlength="30">
+                        <select class="contact-form-field" id="contact-form-subject" name="contact_subject">
+                            <option value="Фулфилмент / Fulfillment">Фулфилмент / Fulfillment</option>
+                            <option value="Сотрудничество">Сотрудничество</option>
+                            <option value="Другая тема ...">Другая тема ...</option>
+                        </select>
+                        <textarea class="contact-form-field" id="contact-form-mess" name="contact_mess" placeholder="Ваше сообщение ..." maxlength="360" rows="5" cols="45" autocomplete="off"></textarea>
+                        <input class="contact-form-field" id="contact-form-button" type="submit" value="Отправить" onclick="sendform();" data-sr-id="46">
+                    </form>
+                </div>
+
+    </div>
+
 </section>

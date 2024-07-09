@@ -145,3 +145,12 @@ svg.header-navbar-refcontainer-icon {
 .fade-out-down {
   animation: 0.75s both fadeOutDown;
 }
+
+.navigation-upp-arrow {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #000000;
+}

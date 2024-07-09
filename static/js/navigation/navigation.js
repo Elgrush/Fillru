@@ -54,3 +54,19 @@ window.addEventListener("scroll", function(event) {
     });
 });
 };
+
+//Handles arrow animation
+const elementsToFadeWhenZeroPosition = document.querySelectorAll(".fade-in-up-on-scroll-down");
+if (elementsToFadeWhenZeroPosition) {
+window.addEventListener("scroll", function(event) {
+    elementsToFadeWhenZeroPosition.forEach(function(element) {
+    if (window.scrollY > 0) {
+        element.classList.remove("fade-in-up");
+        element.classList.add("fade-out-down");
+    } else {
+        element.classList.remove("fade-out-down");
+        element.classList.add("fade-in-up");
+    }
+    });
+});
+};

@@ -190,24 +190,28 @@ div#navigation-side-link-telegram {
   from {
     transform: translateX(0px);
     opacity: 1;
+    width: 88px;
   }
   to {
     transform: translateX(0px);
     opacity: 0;
+    width: 0px;
     display: none;
   }
 }
 
 .fade-in-left {
-  animation: 0.75s both fadeInByHorizontalSlide;
+  animation: 0.5s both fadeInByHorizontalSlide;
 }
 
 @keyframes fadeOutByHorizontalSlide {
   from {
     opacity: 0;
+    width: 0px;
   }
   to {
     opacity: 1;
+    width: 88px;
   }
 }
 
@@ -217,7 +221,7 @@ div#navigation-side-link-telegram {
 
 @keyframes menuHorizontalFadeIn {
     from{
-        width: auto;
+        width: 130px;
     }
     to{
         width: 36px;
@@ -229,12 +233,12 @@ div#navigation-side-link-telegram {
         width: 36px;
     }
     to{
-        width: auto;
+        width: 130px;
     }
 }
 
 .fade-out-horizontal-div {
-  animation: 1s both menuHorizontalFadeOut;
+  animation: 0.75s both menuHorizontalFadeOut;
 }
 
 .fade-in-horizontal-div {

@@ -1,7 +1,8 @@
 import { illuminateObject } from "./handlersCollection.js"
 
 //Manages top bar color swaps
-for(let element of document.getElementsByClassName(".header-nav-links"))
+const mainNavigationLinks = document.getElementsByClassName(".header-nav-links");
+for(let element of mainNavigationLinks)
 {
     if(element.id != "header-nav-links-demo_version")
     {
@@ -38,9 +39,20 @@ for(let element of document.getElementsByClassName("header-navbar-refcontainer-i
 
 //Handles scrolldown
 const elementsToFadeInUpOnScroll = document.querySelectorAll(".fade-in-up-on-scroll");
+//Handles arrow animation
+const elementsToFadeWhenZeroPosition = document.querySelectorAll(".fade-in-up-on-scroll-down");
 let previous_height = window.scrollY;
-if (elementsToFadeInUpOnScroll) {
 window.addEventListener("scroll", function(event) {
+    elementsToFadeWhenZeroPosition.forEach(function(element) {
+    if (window.scrollY <= previous_height) {
+        element.classList.remove("fade-out-down");
+        element.classList.add("fade-in-up");
+    } else {
+        element.classList.remove("fade-in-up");
+        element.classList.add("fade-out-down");
+    }
+    });
+
     elementsToFadeInUpOnScroll.forEach(function(element) {
     if (window.scrollY > previous_height) {
         element.classList.remove("fade-out-down");
@@ -53,23 +65,6 @@ window.addEventListener("scroll", function(event) {
     }
     });
 });
-};
-
-//Handles arrow animation
-const elementsToFadeWhenZeroPosition = document.querySelectorAll(".fade-in-up-on-scroll-down");
-if (elementsToFadeWhenZeroPosition) {
-window.addEventListener("scroll", function(event) {
-    elementsToFadeWhenZeroPosition.forEach(function(element) {
-    if (window.scrollY > 0) {
-        element.classList.remove("fade-in-up");
-        element.classList.add("fade-out-down");
-    } else {
-        element.classList.remove("fade-out-down");
-        element.classList.add("fade-in-up");
-    }
-    });
-});
-};
 
 //Handles sidebar animations
 const sideBarElements = document.querySelectorAll(".navigation-side-link-element-fading");
@@ -98,4 +93,22 @@ if (sideBarElements) {
     }
     
     );
+};
+
+//Makes scrolls not to trigger when using navigation
+async function hideFading() {
+
+    elementsToFadeInUpOnScroll.forEach((element) => {
+        element.classList.remove("fade-out-down");
+        element.classList.add("fade-in-up");
+    })
+
+}
+
+for(let element of mainNavigationLinks)
+{
+    if(element.id != "header-nav-links-demo_version")
+    {
+        element.addEventListener("click", () => window.setTimeout(hideFading, 100));
+    }
 };

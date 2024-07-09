@@ -177,15 +177,16 @@
         <div class="contact-form-container">
                     <div id="messageResult"></div>
                     <form action="javascript:void(0);" class="contact-form" name="contact_form">
-                        <input class="contact-form-field" id="contact-form-name" type="text" name="contact_name" placeholder="Имя *">
-                        <input class="contact-form-field" id="contact-form-phone" type="text" name="contact_phone" placeholder="Телефон *">
-                        <select class="contact-form-field" id="contact-form-subject" name="contact_subject">
-                            <option value="Фулфилмент / Fulfillment">Фулфилмент / Fulfillment</option>
-                            <option value="Сотрудничество">Сотрудничество</option>
-                            <option value="Другая тема ...">Другая тема ...</option>
+                        {% csrf_token %}
+                        <input class="contact-form-field" id="contact-form-name" type="text" name="contact_name" placeholder="Имя *" required>
+                        <input class="contact-form-field" id="contact-form-phone" type="text" name="contact_phone" placeholder="Телефон *" required>
+                        <select class="contact-form-field" id="contact-form-subject" name="contact_subject" required>
+                            <option class="contact-form-option" value="Фулфилмент / Fulfillment">Фулфилмент / Fulfillment</option>
+                            <option class="contact-form-option" value="Сотрудничество">Сотрудничество</option>
+                            <option class="contact-form-option" value="Другая тема ...">Другая тема ...</option>
                         </select>
-                        <textarea class="contact-form-field" id="contact-form-mess" name="contact_mess" placeholder="Ваше сообщение ..." maxlength="360" rows="5" cols="45" autocomplete="off"></textarea>
-                        <input class="contact-form-field" id="contact-form-button" type="submit" value="Отправить" onclick="sendform();" data-sr-id="46">
+                        <textarea class="contact-form-field" id="contact-form-message" name="contact_message" placeholder="Ваше сообщение ..." maxlength="360" rows="5" cols="45" autocomplete="off" required></textarea>
+                        <input class="contact-form-field" id="contact-form-button" type="submit" value="Отправить" data-sr-id="46">
                     </form>
                 </div>
 

@@ -154,3 +154,93 @@ svg.header-navbar-refcontainer-icon {
     bottom: 20px;
     background-color: #000000;
 }
+
+.navigation-side-link-block {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    z-index: 1000;
+}
+
+.navigation-side-link-element {
+    text-transform: uppercase;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+div#navigation-side-link-whatsup {
+    background-color: #28D146;
+}
+
+.navigation-side-link-div-element {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+div#navigation-side-link-telegram {
+    background-color: #30AAEA;
+}
+
+/* For side-bar animation */
+@keyframes fadeInByHorizontalSlide {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.fade-in-left {
+  animation: 0.75s both fadeInByHorizontalSlide;
+}
+
+@keyframes fadeOutByHorizontalSlide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out-left {
+  animation: 0.75s both fadeOutByHorizontalSlide;
+}
+
+@keyframes menuHorizontalFadeIn {
+    from{
+        width: auto;
+    }
+    to{
+        width: 36px;
+    }
+}
+
+@keyframes menuHorizontalFadeOut {
+    from{
+        width: 36px;
+    }
+    to{
+        width: auto;
+    }
+}
+
+.fade-out-horizontal-div {
+  animation: 1s both menuHorizontalFadeOut;
+}
+
+.fade-in-horizontal-div {
+  animation: 0.5s both menuHorizontalFadeIn;
+}
+
+.navigation-side-link-element-fading {
+    padding-right: 10px;
+}

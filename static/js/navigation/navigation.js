@@ -70,3 +70,32 @@ window.addEventListener("scroll", function(event) {
     });
 });
 };
+
+//Handles sidebar animations
+const sideBarElements = document.querySelectorAll(".navigation-side-link-element-fading");
+if (sideBarElements) {
+    sideBarElements.forEach(
+
+    (element) => {
+
+        element.parentElement.addEventListener("mouseover", (event) => {
+
+            element.parentElement.classList.remove("fade-in-horizontal-div");
+            element.parentElement.classList.add("fade-out-horizontal-div");
+
+            element.classList.remove("fade-in-left");
+            element.classList.add("fade-out-left");
+        });
+
+        element.parentElement.addEventListener("mouseout", (event) => {
+
+            element.parentElement.classList.remove("fade-out-horizontal-div");
+            element.parentElement.classList.add("fade-in-horizontal-div");
+
+            element.classList.remove("fade-out-left");
+            element.classList.add("fade-in-left");
+        });
+    }
+    
+    );
+};

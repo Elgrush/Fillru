@@ -110,6 +110,7 @@ a.contact-icon-address {
     width: 100%;
     height: 400px;
     justify-content: space-between;
+    margin-bottom: 80px;
 }
 
 .contact-map
@@ -121,7 +122,6 @@ a.contact-icon-address {
     width: 35%;
     display: flex;
     flex-direction: column;
-    font-family "Roboto Condensed", font-family: sans-serif;
 }
 
 .contact-form {
@@ -136,9 +136,8 @@ a.contact-icon-address {
     border-radius: 4px;
     padding: 8px 15px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     border-width: 2px;
-    "Roboto Condensed", font-family: sans-serif;
 }
 
 div#yamap1 {

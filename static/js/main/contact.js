@@ -19,7 +19,7 @@ $("#contact-form-button").click(function() {
             url: window.location.href,
             data:
             {
-                csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val() ,
+                csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
                 name: name,
                 phone: phone,
                 subject: subject,
@@ -30,6 +30,10 @@ $("#contact-form-button").click(function() {
                  $("#contact-form-button").val("Спасибо за обращение")
              },
              fail : function(res, status, xhr)
+             {
+                 $("#contact-form-button").val("Произошла ошибка")
+             },
+             error : function(res, status, xhr)
              {
                  $("#contact-form-button").val("Произошла ошибка")
              }

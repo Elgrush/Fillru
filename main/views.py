@@ -1,10 +1,12 @@
 import base64
 import requests
-import json
+import subprocess
 
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
+
+from .models import ServiceType, ServiceElement, reset_id
 
 
 def sync_data_with_my_storeroom():
@@ -31,6 +33,7 @@ def sync_data_with_my_storeroom():
 
             try:
                 left, right = service.split('. ')
+                service = right
                 left = int(left)
                 while len(ordered_services) < left:
                     ordered_services.append("None")
@@ -40,10 +43,24 @@ def sync_data_with_my_storeroom():
 
             data.append((i[0], service, i[2]))
 
-    print(ordered_services, unordered_services)
+    services = dict()
 
-    with open('data.json', 'w') as f:
-        json.dump(data, f)
+    ServiceType.objects.all().delete()
+    reset_id()
+
+    for i in range(len(ordered_services)):
+        services[ordered_services[i]] = ServiceType.objects.create(id=i, name=ordered_services[i])
+
+    unordered_services = list(unordered_services)
+    for i in range(len(unordered_services)):
+        services[unordered_services[i]] = ServiceType.objects.create(id=i+len(ordered_services), name=unordered_services[i])
+
+    for i in data:
+        ServiceElement.objects.create(
+            serviceType=services[i[1]],
+            name=i[0],
+            price=i[2]
+        )
 
 
 @csrf_protect

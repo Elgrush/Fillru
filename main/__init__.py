@@ -14,7 +14,8 @@ def sync_data_with_my_storeroom():
     response = requests.get(url="https://api.moysklad.ru/api/remap/1.2/entity/service",
                             headers={"Authorization": access_token, "Accept-Encoding": "gzip"})
 
-    raw_data = [(i["name"], i["pathName"], 0) for i in response.json()["rows"]]
+    print(list(response.json()["rows"][0]["salePrices"])[0]["value"])
+    raw_data = [(i["name"], i["pathName"], (int(list(i["salePrices"])[0]["value"]))/100) for i in response.json()["rows"]]
     data = []
     ordered_services = []
     unordered_services = set()

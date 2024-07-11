@@ -163,3 +163,7 @@ tr.table-striped-line {
     padding: 8px;
     line-height: 1.42857143;
 }
+
+td.table-price-td {
+    min-width: 43px;
+}

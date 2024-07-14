@@ -16,7 +16,11 @@ def index(request):
                 d.update({'name': j.name})
                 d.update({'price': j.price})
                 services[i.name].append(d)
-        return render(request, "main/main.html", context={'services': services})
+        return render(request, "main/main.html", context={'services': services,
+                                                          'FBO_main': ServiceElement.objects.get(
+                                                              name="Обработка товара по системе FBО (габариты не более 10*10*10 см)(вес до 500 гр) + доставка до склада маркетплейса").price,
+                                                              'FBS_main': ServiceElement.objects.get(
+                                                              name="Обработка товара по системе FBS (габариты не более 10*10*10 см)(вес до 500гр)  + доставка до ПВЗ маркетплейса").price, })
     elif request.method == "POST":
         print(request.POST)
         return HttpResponse("Successfully")

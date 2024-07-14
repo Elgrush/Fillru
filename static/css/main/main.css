@@ -13,7 +13,7 @@ a#header-nav-links-main {
 }
 
 .sub-head-wrap {
-    margin-top: 202px;
+    margin-top: 192px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,6 +48,7 @@ a.orange-bold {
     display: flex;
     font-size: 14px;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 section.comparison-side {
@@ -113,7 +114,8 @@ body {
 }
 
 .BlackBoldMiddleBox {
-    margin-top: 40px;
+    margin-top: 80px;
+    margin-bottom: 40px;
     font-family: "Roboto Condensed", sans-serif;
     clip-path: polygon(15px 0px, 100% 0px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0px 100%, 0px 15px);
     background-color: rgb(0, 0, 0);
@@ -134,18 +136,20 @@ body {
     margin: auto;
     font-family: Roboto, sans-serif;
     margin: auto;
+    margin-top: 40px;
 }
 
 .table-header {
-    margin-top: 40px;
     text-transform: uppercase;
     font-weight: 600;
     color: rgb(32, 32, 32);
+    margin-bottom: 10px;
 }
 
 table.table-striped {
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .table-striped-body{
@@ -162,6 +166,8 @@ tr.table-striped-line {
     border-top: 2px solid #ddd;
     padding: 8px;
     line-height: 1.42857143;
+    font-weight: 600;
+    font-family: Roboto, sans-serif;
 }
 
 td.table-price-td {
@@ -174,4 +180,9 @@ div {
 
 dt {
     font-family: "Roboto Condensed", sans-serif;
+}
+
+.table-header-header {
+    padding-bottom: 40px;
+    padding-top: 40px;
 }

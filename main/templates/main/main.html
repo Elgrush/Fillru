@@ -9,6 +9,7 @@
    <script src="{% static 'js/main/main.js' %}" type="module"></script>
 </head>
 <body>
+    {% include "loader.html" %}
     {% include "navigation.html" %}
     <article class="top-article" style="background: url({{ MEDIA_URL }}/media/images/main/defaultStoreroom.webp), black; background-size: cover;">
       <div class="sub-head-wrap">

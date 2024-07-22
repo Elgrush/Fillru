@@ -159,7 +159,7 @@ svg.header-navbar-refcontainer-icon {
     position: fixed;
     top: 50%;
     left: 10px;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .navigation-side-link-element {

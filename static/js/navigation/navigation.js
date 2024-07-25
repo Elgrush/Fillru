@@ -40,11 +40,11 @@ for(let element of document.getElementsByClassName("header-navbar-refcontainer-i
 //Handles scrolldown
 const elementsToFadeInUpOnScroll = document.querySelectorAll(".fade-in-up-on-scroll");
 //Handles arrow animation
-const elementsToFadeWhenZeroPosition = document.querySelectorAll(".fade-in-up-on-scroll-down");
+const elementsToFadeWhenZeroPosition = document.querySelectorAll(".fade-in-up-on-zero-position");
 let previous_height = window.scrollY;
 window.addEventListener("scroll", function(event) {
     elementsToFadeWhenZeroPosition.forEach(function(element) {
-    if (window.scrollY <= previous_height) {
+    if (window.scrollY <= 10) {
         element.classList.remove("fade-out-down");
         element.classList.add("fade-in-up");
     } else {

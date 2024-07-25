@@ -1,0 +1,19 @@
+@keyframes resizeIn {
+    0% {
+        display: none;
+        scale: 40%;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.resizeInElementClass {
+    animation: resizeIn 0.5s ease-out;
+}
+
+.resizeInElement {
+    visibility: hidden;
+}

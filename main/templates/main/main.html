@@ -7,19 +7,20 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main/main.css' %}">
    <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL }}/media/favicon.ico"/>
    <script src="{% static 'js/main/main.js' %}" type="module"></script>
+    {% include "animation_packs/resize-in_pack.html" %}
 </head>
 <body>
     {% include "loader.html" %}
     {% include "navigation.html" %}
     <article class="top-article" style="background: url({{ MEDIA_URL }}/media/images/main/defaultStoreroom.webp), black; background-size: cover;">
       <div class="sub-head-wrap">
-        <div class="sub-head-wrap-introduction">
+        <div class="sub-head-wrap-introduction resizeInElement">
             <span class="bold shad">Fillru </span>
           - фулфилмент по системам: FBO / FBS в Москве — для интернет магазинов, и поставщиков, работающих через маркетплейсы: Ozon | WildBerries | Яндекс Маркет и др.
             <a href="tel:+79250984344" class="orange-bold"> +7 (925) 098-43-44</a>
         </div>
               <div class="comparison">
-            <section class="comparison-side">
+            <section class="comparison-side resizeInElement">
               <header class="comparison-item-head">
                 <div class="comparison-new-header">Обработка товара по системе <div class="bold shad">FBO</div>
                 </div>
@@ -43,7 +44,7 @@
                 </div>
             </section>
 
-            <section class="comparison-side">
+            <section class="comparison-side resizeInElement">
               <header class="comparison-item-head">
                 <div class="comparison-new-header">Обработка товара по системе <div class="bold shad">FBS</div>
                 </div>
@@ -69,24 +70,24 @@
       </div>
     </article>
     <section class="main-section">
-      <div class="BlackBoldMiddleBox">
+      <div class="BlackBoldMiddleBox resizeInElement">
         О компании «Fillru»
       </div>
-      <p>
+      <p class="resizeInElement">
         Компания «Fillru» — это поставщик услуг фулфилмента для различных брендов и компаний, которые хотят упростить свою логистическую цепочку и повысить качество обслуживания своих клиентов. Наша основная задача — обеспечить максимально быструю и эффективную доставку товаров по Москве, и М.О., используя передовые технологии и оптимальную систему управления запасами.
       </p>
-        <div class="BlackBoldMiddleBox">
+        <div class="BlackBoldMiddleBox resizeInElement">
         Прайс-лист
       </div>
-        <div class="table-header table-header-header">
+        <div class="table-header table-header-header resizeInElement">
           Прайс-лист на услуги фулфилмент
         </div>
 
       {% for key, values in services.items %}
-       <div class="table-header">
+       <div class="table-header resizeInElement">
         {{ key }}
       </div>
-      <table class="table-striped">
+      <table class="table-striped resizeInElement">
         <tbody class="table-striped-body">
         {% for value in values %}
           <tr class="table-striped-line">

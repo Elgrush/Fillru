@@ -132,7 +132,7 @@ a.contact-icon-address {
 }
 
 .contact-form-field {
-    height: 40px;
+    height: 30px;
     border-radius: 4px;
     padding: 8px 15px;
     font-size: 16px;
@@ -151,4 +151,13 @@ textarea#contact-form-mess {
 input#contact-form-button {
     background-color: #000;
     color: #fff;
+    height: 40px;
+}
+
+select#contact-form-subject {
+    height: 40px;
+}
+
+textarea#contact-form-message {
+    height: 160px;
 }

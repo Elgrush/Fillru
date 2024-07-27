@@ -6,13 +6,19 @@ function triggerSizeInAnimation(element)
     element.classList.add("resizeInElementClass");
 }
 
+function checkVisible(element)
+{
+  var rect = element.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
 function CheckElementsVisibilityForSizeIn(elementsToSizeIn)
 {
     for (let i = 0; i < elementsToSizeIn.length; ++i)
     {
         let element = elementsToSizeIn[i];
-        let rect = element.getBoundingClientRect();
-        if ((document.documentElement.clientHeight - rect.top) > rect.height/2)
+        if (checkVisible(element))
         {
             triggerSizeInAnimation(element);
             elementsToSizeIn.splice(i, 1);

@@ -26,11 +26,11 @@ def sync_data_with_my_storeroom():
 
     for i in raw_data:
         if "Фулфилмент (услуги склада)" in i[1]:
-            try:
+            try:  #Checks if the service is empty
                 service = i[1].split(
                     "Фулфилмент (услуги склада)/"
                 )[1].replace('/', ' ')
-                try:  #Checks if the service is empty
+                try:
                     left, right = service.split('. ')
                     service = right
                     left = int(left)

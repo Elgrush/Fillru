@@ -18,28 +18,32 @@ def sync_data_with_my_storeroom():
         print("Connection error")
         return
 
-    raw_data = [(i["name"], i["pathName"], (int(list(i["salePrices"])[0]["value"]))/100) for i in response.json()["rows"]]
+    raw_data = [(i["name"], i["pathName"], (int(list(i["salePrices"])[0]["value"])) / 100) for i in
+                response.json()["rows"]]
     data = []
     ordered_services = []
     unordered_services = set()
 
     for i in raw_data:
         if "Фулфилмент (услуги склада)" in i[1]:
-            service = i[1].split(
-                "Фулфилмент (услуги склада)/"
-            )[1].replace('/', ' ')
-
             try:
-                left, right = service.split('. ')
-                service = right
-                left = int(left)
-                while len(ordered_services) < left:
-                    ordered_services.append("None")
-                ordered_services[left - 1] = right
-            except ValueError:
-                unordered_services.add(service)
+                service = i[1].split(
+                    "Фулфилмент (услуги склада)/"
+                )[1].replace('/', ' ')
+                try:
+                    left, right = service.split('. ')
+                    service = right
+                    left = int(left)
+                    while len(ordered_services) < left:
+                        ordered_services.append("None")
+                    ordered_services[left - 1] = right
+                except ValueError:
+                    unordered_services.add(service)
 
-            data.append((i[0], service, i[2]))
+                data.append((i[0], service, i[2]))
+
+            except IndexError:
+                pass
 
     services = dict()
 
@@ -51,7 +55,8 @@ def sync_data_with_my_storeroom():
 
     unordered_services = list(unordered_services)
     for i in range(len(unordered_services)):
-        services[unordered_services[i]] = ServiceType.objects.create(id=i+len(ordered_services), name=unordered_services[i])
+        services[unordered_services[i]] = ServiceType.objects.create(id=i + len(ordered_services),
+                                                                     name=unordered_services[i])
 
     for i in data:
         ServiceElement.objects.create(

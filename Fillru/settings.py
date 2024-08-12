@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from os import environ
+import base64
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -121,6 +122,16 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     BASE_DIR / "media",
 ]
+
+with open('.mail.conf', 'r') as f:
+    data = f.readline().split(':')
+    EMAIL_HOST = data[0]
+    EMAIL_PORT = data[1]
+    EMAIL_HOST_USER = data[2]
+    EMAIL_HOST_PASSWORD = data[3]
+
+EMAIL_USE_TLS = True
+environ["EMAIL_HOST_USER"] = EMAIL_HOST_USER
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

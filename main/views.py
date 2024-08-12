@@ -1,6 +1,8 @@
+from os import environ
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
+from django.core.mail import send_mail
 
 from .models import ServiceType, ServiceElement
 
@@ -22,5 +24,14 @@ def index(request):
                                                               'FBS_main': ServiceElement.objects.get(
                                                               name="Обработка товара по системе FBS (габариты не более 10*10*10 см)(вес до 500гр)  + доставка до ПВЗ маркетплейса").price, })
     elif request.method == "POST":
-        print(request.POST)
+
+        send_mail(
+            subject="Обращение с сайта Fillru",
+            message=("Услуга: " + request.POST["subject"] + '. Имя:' + request.POST["name"] + '\n'+
+                     'Контактный номер телефона: ' + request.POST["phone"] + '\n' + request.POST["message"]),
+            from_email=None,
+            recipient_list=[environ["EMAIL_HOST_USER"]],
+            fail_silently=False,
+        )
+
         return HttpResponse("Successfully")

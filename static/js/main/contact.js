@@ -27,7 +27,9 @@ $("#contact-form-button").click(function() {
             },
             success : function(res, status, xhr)
              {
-                 $("#contact-form-button").val("Спасибо за обращение")
+                let button = $("#contact-form-button");
+                 button.val("Спасибо за обращение");
+                 button.unbind('click');
              },
              fail : function(res, status, xhr)
              {
